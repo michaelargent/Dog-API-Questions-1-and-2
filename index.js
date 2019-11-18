@@ -1,12 +1,12 @@
 'use strict';
 
 function getDogImage(numberOfDogs) {
-    fetch(`https://dog.ceo/api/breeds/image/random/3`)
+    fetch(`https://dog.ceo/api/breeds/image/random/${numberOfDogs}`)
       .then(response => response.json())
       .then(responseJson => 
         displayResults(responseJson))
       .catch(error => alert('Something went wrong. Try again later.'));
-  }
+  };
   
 
     function displayResults(responseJson) {
@@ -17,19 +17,18 @@ function getDogImage(numberOfDogs) {
         });
         //display the results section
         $(".results").removeClass("hidden");
-      }
+      };
 
-function watchForm() {
+function watchSubmit() {
   $('form').submit(event => {
     event.preventDefault();
     let numberOfDogs = document.getElementById("numberOfDogs").value;
-    getDogImage();
+    getDogImage(numberOfDogs);
   });
-}
-
+};
 
 
 $(function() {
   console.log('App loaded! Waiting for submit!');
-  watchForm();
+  watchSubmit();
 });
