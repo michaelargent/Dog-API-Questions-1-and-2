@@ -8,7 +8,6 @@ function getDogImage(numberOfDogs) {
       .catch(error => alert('Something went wrong. Try again later.'));
   };
   
-
     function displayResults(responseJson) {
         console.log(responseJson);
         $(".results").html("");
@@ -26,7 +25,6 @@ function watchSubmit() {
     getDogImage(numberOfDogs);
   });
 };
-
 
 $(function() {
   console.log('App loaded! Waiting for submit!');
